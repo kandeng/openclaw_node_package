@@ -2,7 +2,7 @@
 
 ## 1. Objective
 
-[Openclaw Node](https://docs.openclaw.ai/nodes) is a powerful Openclaw peripheral, but difficult to build. 
+[Openclaw Nodes](https://docs.openclaw.ai/nodes) are powerful Openclaw peripherals, but difficult to build. 
 
 This package is a javascript SDK that makes it easy to build custom openclaw nodes.
 In addition, the package also includes a plugin that automatically discovers and routes tool invocations to authenticated nodes.

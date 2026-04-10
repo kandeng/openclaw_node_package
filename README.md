@@ -11,7 +11,30 @@ In addition, the package also includes a plugin that automatically discovers and
 &nbsp;
 ## 2. User scenario
 
-Openclaw node is often used to tightly couple devices or robots to the openclaw gateway. 
+Openclaw nodes provide a secure, persistent bridge between external devices/robots and the Openclaw gateway. 
+
+Openclaw nodes can be deployed either on separate devices or robots, 
+or on the same machine as the Openclaw gateway, where they act as a proxy for remote devices and robots.
+
+A frequently asked question is: What is the difference between OpenClaw nodes and MCP servers?
+
+| Feature | OpenClaw Node | MCP Server |
+|------|---------|---------|
+| Protocol | Proprietary WebSocket Handshake | Standardized JSON-RPC (Stdio or HTTP) |
+| Trust Model | Device Pairing: Requires explicit manual approval/code | Configuration: Pre-configured via a file or direct command |
+| Identity | Persistent (Device ID / Name) | Ephemeral (Session-based) |
+| Transport | Network-first (WebSocket) | Local-first (Stdio) or Network (HTTP) |
+
+For real-time, bi-directional hardware control, OpenClaw nodes are the ideal solution.
+
+For heavy-lift, easily crashed jobs like 3D object generation, MCP servers are the best bet.
+In addition, it’s better to run these jobs in a Docker sandbox.
+
+Another frequently asked question is: Can we use custom http or websocker server to replace MCP server?
+
+In most cases, you can replace MCP servers with custom http/websocket servers.
+However, if you want your servers to serve Openclaw, Claude code, and other agents, the MCP server is the best bet.
+Therefore, even though you can use custom http/websocket servers, MCP servers are more preferred.
 
 
 &nbsp;
@@ -80,7 +103,6 @@ openclaw-node-package/
 6. **Node** sends result back to gateway
 7. **Plugin** receives result and formats it for the agent
 
----
 
 &nbsp;
 ## 5. Single Machine Deployment
@@ -689,6 +711,14 @@ OPENCLAW_GATEWAY_TOKEN=<token> node dist/index.js
 
 
 &nbsp;
-## 11. License
+## 11. Example
+
+Here is an example with a step-by-step guide 
+to illustrate how to install and use the openclaw-node-package in a mock distributed deployment.
+
+
+&nbsp;
+## 12. License
 
 MIT
+

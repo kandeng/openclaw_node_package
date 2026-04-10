@@ -11,6 +11,8 @@ In addition, the package also includes a plugin that automatically discovers and
 &nbsp;
 ## 2. User scenario
 
+Openclaw node is often used to tightly couple devices or robots to the openclaw gateway. 
+
 
 &nbsp;
 ## 3. File Structure
@@ -476,9 +478,8 @@ export default createNodePlugin({
 }
 ```
 
----
-
-## Writing Custom Code
+&nbsp;
+## 7. Writing Custom Code
 
 ### Node Configuration
 
@@ -558,7 +559,7 @@ node.on("reconnecting", (attempt, max) => {
 
 
 &nbsp;
-## 7. Build and Installation
+## 8. Build and Installation
 
 ### Where is node_modules stored?
 
@@ -642,7 +643,7 @@ OPENCLAW_GATEWAY_TOKEN=<token> node dist/index.js
 ```
 
 &nbsp;
-## Environment Variables
+## 9. Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
@@ -653,7 +654,7 @@ OPENCLAW_GATEWAY_TOKEN=<token> node dist/index.js
 
 
 &nbsp;
-## Troubleshooting
+## 10. Troubleshooting
 
 ### Node won't connect
 - Check `OPENCLAW_GATEWAY_TOKEN` is valid
@@ -688,6 +689,6 @@ OPENCLAW_GATEWAY_TOKEN=<token> node dist/index.js
 
 
 &nbsp;
-## 10. License
+## 11. License
 
 MIT

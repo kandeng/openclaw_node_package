@@ -16,25 +16,40 @@ Openclaw nodes provide a secure, persistent bridge between external devices/robo
 Openclaw nodes can be deployed either on separate devices or robots, 
 or on the same machine as the Openclaw gateway, where they act as a proxy for remote devices and robots.
 
-A frequently asked question is: What is the difference between OpenClaw nodes and MCP servers?
+1. Openclaw vs MCP server
+   
+   A frequently asked question is: What is the difference between OpenClaw nodes and MCP servers?
 
-| Feature | OpenClaw Node | MCP Server |
-|------|---------|---------|
-| Protocol | Proprietary WebSocket Handshake | Standardized JSON-RPC (Stdio or HTTP) |
-| Trust Model | Device Pairing: Requires explicit manual approval/code | Configuration: Pre-configured via a file or direct command |
-| Identity | Persistent (Device ID / Name) | Ephemeral (Session-based) |
-| Transport | Network-first (WebSocket) | Local-first (Stdio) or Network (HTTP) |
+    | Feature | OpenClaw Node | MCP Server |
+    |------|---------|---------|
+    | Protocol | Proprietary WebSocket Handshake | Standardized JSON-RPC (Stdio or HTTP) |
+    | Trust Model | Device Pairing: Requires explicit manual approval/code | Configuration: Pre-configured via a file or direct command |
+    | Identity | Persistent (Device ID / Name) | Ephemeral (Session-based) |
+    | Transport | Network-first (WebSocket) | Local-first (Stdio) or Network (HTTP) |
 
-For real-time, bi-directional hardware control, OpenClaw nodes are the ideal solution.
+   For real-time, bi-directional hardware control, OpenClaw nodes are the ideal solution.
 
-For heavy-lift, easily crashed jobs like 3D object generation, MCP servers are the best bet.
-In addition, it’s better to run these jobs in a Docker sandbox.
+   For heavy-lift, easily crashed jobs like 3D object generation, MCP servers are the best bet.
+   In addition, it’s better to run these jobs in a Docker sandbox.
 
-Another frequently asked question is: Can we use custom http or websocker server to replace MCP server?
+2. Custom http/websocket server vs MCP server
+  
+   Another frequently asked question is: Can we use custom http or websocker server to replace MCP server?
 
-In most cases, you can replace MCP servers with custom http/websocket servers.
-However, if you want your servers to serve Openclaw, Claude code, and other agents, the MCP server is the best bet.
-Therefore, even though you can use custom http/websocket servers, MCP servers are more preferred.
+   In most cases, you can replace MCP servers with custom http/websocket servers.
+   However, if you want your servers to serve Openclaw, Claude code, and other agents, the MCP server is the best bet.
+   Therefore, even though you can use custom http/websocket servers, MCP servers are more preferred.
+
+3. Openclaw-node-package vs Openclaw-node
+
+   This package, `openclaw-node-package`, is inspired by [`openclaw-node`](https://github.com/heypinchy/openclaw-node).
+   However, their use cases are different.
+
+   Suppose you want to implement a robot game powered by Openclaw: game engine -> openclaw gateway -> physical robots.
+
+   To integrate the openclaw gateway with the game engine, you use `openclaw-node`.
+
+   To bridge the OpenClaw gateway to physical robots, you use this package, `openclaw-node-package`.
 
 
 &nbsp;

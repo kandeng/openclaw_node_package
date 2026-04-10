@@ -1,0 +1,7 @@
+{
+  "id": "robot_plugin_example",
+  "name": "Robot Controller Plugin (Example)",
+  "version": "1.0.0",
+  "entry": "src/index.ts",
+  "description": "Example plugin for controlling a physical robot via node delegation"
+}

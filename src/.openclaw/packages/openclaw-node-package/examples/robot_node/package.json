@@ -1,0 +1,17 @@
+{
+  "name": "robot-node-example",
+  "version": "1.0.0",
+  "description": "Example robot node for openclaw-node-package",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "openclaw-node-package": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}

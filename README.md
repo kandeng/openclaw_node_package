@@ -713,7 +713,7 @@ OPENCLAW_GATEWAY_TOKEN=<token> node dist/index.js
 &nbsp;
 ## 11. Example
 
-Here is an example with a step-by-step guide 
+Here is [an example with a step-by-step guide](./src/.openclaw/packages/openclaw-node-package/examples/example.md) 
 to illustrate how to install and use the openclaw-node-package in a mock distributed deployment.
 
 
